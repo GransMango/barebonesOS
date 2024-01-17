@@ -1,16 +1,12 @@
 /* Define where to start bootloader*/
-ENTRY(start)
+ENTRY(_start)
 
 SECTIONS {
-	. = 1M;
-
-	.rodata BLOCK(4K) : ALIGN(4K)
-	{
-		*(.multiboot)
-	}
+	. = 2M;
 
 	.text BLOCK(4K) : ALIGN(4K)
 	{
+		*(.multiboot)
 		*(.text)
 	}
 
